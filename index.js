@@ -18,11 +18,11 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound() {
-    if(getComputedChoice() == getHumanChoice()) {
+function playRound(computerChoice, humanChoice) {
+    if(computerChoice == humanChoice) {
         alert("Tie!");
         console.log("Tie");
-    } else if(getComputedChoice() == objects[0] && getHumanChoice() == objects[1] || getComputedChoice() == objects[1] && getHumanChoice() == objects[2] || getComputedChoice() == objects[2] && getHumanChoice() == objects[0]) {
+    } else if(getComputedChoice == objects[0] && getHumanChoice == objects[1] || getComputedChoice == objects[1] && getHumanChoice == objects[2] || getComputedChoice == objects[2] && getHumanChoice == objects[0]) {
         alert("U get a point!");
         console.log("U get a point!");
         humanScore += 1;
@@ -34,7 +34,7 @@ function playRound() {
 };
 
 function playGame() {
-    for (i = 0; i < 5; i++) { playRound(i)};
+    for (i = 0; i < 5; i++) { playRound(getComputedChoice(), getHumanChoice())};
     console.log(`Your score: ${humanScore}`);
     console.log(`Computer's score: ${computerScore}`);
 }
