@@ -1,8 +1,8 @@
-const objects = ["rock", "paper", "scissors"];
+const objects = ["Rock", "Paper", "Scissors"];
 
 function getComputedChoice() {
     const computerChoice = objects[(Math.floor(Math.random() * objects.length))];
-    console.log(`computer chose ${computerChoice}`);
+    // console.log(`computer chose ${computerChoice}`);
     return computerChoice;
 };
 
@@ -25,21 +25,18 @@ gameContainer.appendChild(rockBtn);
 gameContainer.appendChild(paperBtn);
 gameContainer.appendChild(scissorsBtn);
 gameContainer.appendChild(para);
-gameContainer.appendChild(resultPara);
+result.appendChild(resultPara);
 
 rockBtn.addEventListener("click", getHumanChoice);
 paperBtn.addEventListener("click", getHumanChoice);
 scissorsBtn.addEventListener("click", getHumanChoice);
 
-// rockBtn.onclick = getHumanChoice;
-// paperBtn.onclick = getHumanChoice;
-// scissorsBtn.onclick =  getHumanChoice;
-
 function getHumanChoice(e) {
     let humanChoice = e.target.innerText;
     para.textContent = `You chose ${humanChoice}`;  
+    // console.log(humanChoice);
     getComputedChoice();
-    return humanChoice; 
+    return humanChoice;
 };
 
 let humanScore = 0;
@@ -47,14 +44,14 @@ let computerScore = 0;
 
 function playRound() {
     if(getHumanChoice === getComputedChoice) {
-        resultPara.textContent = "Tie";
+        console.log("Tie");
     } else if(getComputedChoice == objects[0] && getHumanChoice == objects[1] 
         || getComputedChoice == objects[1] && getHumanChoice == objects[2] 
         || getComputedChoice == objects[2] && getHumanChoice == objects[0]) {
-        resultPara.textContent = "U get a point!";
+        console.log("U get a point!");
         humanScore += 1;
     } else {
-        resultPara.textContent = "computer gets a point!";
+        console.log("computer gets a point!");
         computerScore += 1;
     }
 };
