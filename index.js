@@ -11,8 +11,8 @@ const title = document.createElement("h1");
 const rockBtn = document.createElement("button");
 const paperBtn = document.createElement("button");
 const scissorsBtn = document.createElement("button");
-const result = document.querySelector(".result");
 const para = document.createElement("p");
+const result = document.createElement("div");
 const resultPara = document.createElement("p");
 
 title.innerText = "Rock Paper Scissors";
@@ -26,16 +26,15 @@ gameContainer.appendChild(paperBtn);
 gameContainer.appendChild(scissorsBtn);
 gameContainer.appendChild(para);
 result.appendChild(resultPara);
+gameContainer.appendChild(result);
 
 rockBtn.addEventListener("click", getHumanChoice);
 paperBtn.addEventListener("click", getHumanChoice);
 scissorsBtn.addEventListener("click", getHumanChoice);
 
-function getHumanChoice(e) {
-    let humanChoice = e.target.innerText;
+function getHumanChoice(button) {
+    let humanChoice = button.textContent;
     para.textContent = `You chose ${humanChoice}`;  
-    // console.log(humanChoice);
-    getComputedChoice();
     return humanChoice;
 };
 
