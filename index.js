@@ -1,64 +1,27 @@
-const objects = ["Rock", "Paper", "Scissors"];
+const objects = ["rock", "paper", "scissors"];
 
 function getComputedChoice() {
-    const computerChoice = objects[(Math.floor(Math.random() * objects.length))];
-    // console.log(`computer chose ${computerChoice}`);
+    let computerChoice = objects[(Math.floor(Math.random() * objects.length))];
+    console.log(`computer chose ${computerChoice}`);
     return computerChoice;
 };
 
-const gameContainer = document.querySelector(".gameContainer");
-const title = document.createElement("h1");
 const rockBtn = document.createElement("button");
+rockBtn.id = "rock";
+rockBtn.textContent = "rock";
 const paperBtn = document.createElement("button");
+paperBtn.id = "paper";
+paperBtn.textContent = "paper";
 const scissorsBtn = document.createElement("button");
+scissorsBtn.id = "scissors";
+scissorsBtn.textContent = "paper";
 const para = document.createElement("p");
-const result = document.createElement("div");
-const resultPara = document.createElement("p");
+rockBtn.addEventListener("click", playGame);
+paperBtn.addEventListener("click", playGame);
+scissorsBtn.addEventListener("click", playGame);
+document.body.appendChild(rockBtn);
+document.body.appendChild(paperBtn);
+document.body.appendChild(scissorsBtn);
+document.body.appendChild(para);
 
-title.innerText = "Rock Paper Scissors";
-rockBtn.innerText = "Rock";
-paperBtn.innerText = "Paper";
-scissorsBtn.innerText = "Scissors";
-
-gameContainer.appendChild(title);
-gameContainer.appendChild(rockBtn);
-gameContainer.appendChild(paperBtn);
-gameContainer.appendChild(scissorsBtn);
-gameContainer.appendChild(para);
-result.appendChild(resultPara);
-gameContainer.appendChild(result);
-
-rockBtn.addEventListener("click", getHumanChoice);
-paperBtn.addEventListener("click", getHumanChoice);
-scissorsBtn.addEventListener("click", getHumanChoice);
-
-function getHumanChoice(button) {
-    let humanChoice = button.textContent;
-    para.textContent = `You chose ${humanChoice}`;  
-    return humanChoice;
-};
-
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound() {
-    if(getHumanChoice === getComputedChoice) {
-        console.log("Tie");
-    } else if(getComputedChoice == objects[0] && getHumanChoice == objects[1] 
-        || getComputedChoice == objects[1] && getHumanChoice == objects[2] 
-        || getComputedChoice == objects[2] && getHumanChoice == objects[0]) {
-        console.log("U get a point!");
-        humanScore += 1;
-    } else {
-        console.log("computer gets a point!");
-        computerScore += 1;
-    }
-};
-
-function playGame() {
-    for (i = 0; i < 5; i++) { playRound(getComputedChoice(), getHumanChoice())};
-    console.log(`Your score: ${humanScore}`);
-    console.log(`Computer's score: ${computerScore}`);
-}
-
-playGame();
+function playGame() {};
