@@ -1,27 +1,23 @@
-const objects = ["rock", "paper", "scissors"];
+const container = document.querySelector(".container");
 
-function getComputedChoice() {
-    let computerChoice = objects[(Math.floor(Math.random() * objects.length))];
-    console.log(`computer chose ${computerChoice}`);
-    return computerChoice;
-};
+const h1 = document.createElement("h1");
+h1.textContent = "Rock Paper Scissors";
 
-const rockBtn = document.createElement("button");
-rockBtn.id = "rock";
-rockBtn.textContent = "rock";
-const paperBtn = document.createElement("button");
-paperBtn.id = "paper";
-paperBtn.textContent = "paper";
-const scissorsBtn = document.createElement("button");
-scissorsBtn.id = "scissors";
-scissorsBtn.textContent = "paper";
-const para = document.createElement("p");
-rockBtn.addEventListener("click", playGame);
-paperBtn.addEventListener("click", playGame);
-scissorsBtn.addEventListener("click", playGame);
-document.body.appendChild(rockBtn);
-document.body.appendChild(paperBtn);
-document.body.appendChild(scissorsBtn);
-document.body.appendChild(para);
+const btnContainer = document.createElement("div");
 
-function playGame() {};
+const rock = document.createElement("button");
+rock.textContent = 'rock';
+
+const paper = document.createElement("button");
+paper.textContent = 'paper';
+
+const scissors = document.createElement("button");
+scissors.textContent = 'scissors';
+
+
+btnContainer.appendChild(rock);
+btnContainer.appendChild(paper);
+btnContainer.appendChild(scissors);
+
+container.appendChild(h1);
+container.appendChild(btnContainer);
