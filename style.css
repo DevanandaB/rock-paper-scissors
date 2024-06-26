@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(146, 146, 233);
+    text-align: center;
+}
+button {
+    background-color: rgb(228, 142, 174);
+    width: 75px;
+    height: 30px;
+    color: white;
+}
+button:hover {
+    background-color: rgb(237, 112, 158);
+}
+.scoreContainer {
+    position: absolute;
+    top: 10px;
+    border-radius: 8px;
+    width: 250px;
+    height: 70px;
+}
+.human, .computer {
+    color: white;
+    width: 130px;
+    height: 20px;
+    font-size: 15px;
+    background-color: rgb(155, 149, 149);
+    border-radius: 10px;
+}
